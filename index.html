@@ -10,14 +10,14 @@
 
 <body>
 
-  <header class="main-header">
+  <header data-test="header" class="main-header">
     <a class="logo-link" href="#">
       <img class="logo-img" src="#" alt="Логотип Седона">
     </a>
     <nav class="navigation">
       <ul class="navigation-list">
         <li class="navigation-item">
-          <a class="navigation-link" href="#">Главная</a>
+          <a class="navigation-link navigation-link-current" href="#">Главная</a>
         </li>
         <li class="navigation-item">
           <a class="navigation-link" href="#">О седоне</a>
@@ -44,13 +44,13 @@
       </ul>
     </nav>
   </header>
-  <main class="main-index">
+  <main data-test="main" class="main-index">
     <h1 class="visually-hidden">Седона</h1>
-    <section class="promo">
+    <section data-test="hero" class="promo">
       <h2 class="visually-hidden">Добро пожаловать в Седону</h2>
       <img src="#" alt="">
     </section>
-    <section class="advantages">
+    <section data-test="advantages" class="advantages">
       <h2 class="visually-hidden">Преимущества</h2>
       <p>Седона — небольшой городок в Аризоне,
         заслуживающий большего!</p>
@@ -101,24 +101,24 @@
         </li>
       </ul>
     </section>
-    <section class="hotel">
+    <section data-test="search" class="hotel">
       <h2 class="visually-hidden">Найти гостиницу</h2>
       <p>Заинтересовались?</p>
       <p>Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Седоне</p>
       <a class="hotel-button" href="catalog.html">Поиск гостиницы в Седоне</a>
     </section>
   </main>
-  <footer>
-    <section class="subscribe">
+  <footer data-test="footer" class="main-footer">
+    <section data-test="subscribe" class="subscribe">
       <h2>Подпишитесь на рассылку</h2>
       <p>Только полезная информация и никакого спама, честное бойскаутское!</p>
       <form class="subscribe-form" action="https://echo.htmlacademy.ru/" method="post">
-        <label class="visually-hidden" for="subcribe-email">Ваша почта:</label>
-        <input type="email" name="subscribe-email" id="subscribe-email" placeholder="Ваш e-mail">
+        <label class="visually-hidden" for="subscribe-email">Ваша почта:</label>
+        <input type="email" name="subscribe-email" id="subscribe-email" placeholder="Ваш e-mail" required>
         <button type="submit">Подписаться</button>
       </form>
     </section>
-    <section class="footer-contacts">
+    <div class="footer-contacts">
       <ul class="social-list">
         <li class="social-item">
           <a class="social-link" href="https://vk.com/htmlacademy" target="blank">
@@ -144,7 +144,7 @@
           <span class="visually-hidden">HTML academy</span>
         </a>
       </div>
-    </section>
+    </div>
   </footer>
 
 </body>
