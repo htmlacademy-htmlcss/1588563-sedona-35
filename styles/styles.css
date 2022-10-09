@@ -19,19 +19,47 @@ body {
   font-size: 22px;
   line-height: 26px;
   background-color: #ffffff;
-  color: #000000;
+  color: #333333;
 }
 
-/* header  */
+/* селекторы для повторяющихся стилей */
 
-/* navigation  */
+.section-title {
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
 
-.navigation-list,
-.user-navigation-list {
+.list-reset {
   margin: 0;
   padding: 0;
   list-style: none;
 }
+
+.button {
+  text-decoration: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.button-main {
+  font-size: 20px;
+  line-height: 36px;
+  color: #ffffff;
+  background-color: #756157;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* header  */
+
+.page-header {
+  color: #000000;
+}
+
+/* navigation  */
 
 .navigation-list {
   font-size: 20px;
@@ -39,8 +67,7 @@ body {
   font-weight: 700;
 }
 
-.navigation-link,
-.user-navigation-link {
+.navigation-list a {
   color: inherit;
   text-decoration: none;
 }
@@ -71,12 +98,8 @@ body {
 }
 
 .user-navigation-deal-button {
-  color: #ffffff;
-  background-color: #756157;
   font-size: 16px;
   line-height: 20px;
-  font-weight: 700;
-  text-transform: uppercase;
 }
 
 /* main index  */
@@ -93,10 +116,7 @@ body {
 /* advantages  */
 
 .advantages-title {
-  font-size: 30px;
-  line-height: 36px;
-  font-weight: 700;
-  text-transform: uppercase;
+  color: #000000;
 }
 
 .advantages-text {
@@ -114,6 +134,19 @@ body {
   background-color:rgba(131, 179, 211, 0.12);
 }
 
+.advantages-list-item-title {
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.advantages-list-item-description {
+  font-size: 18px;
+  line-height: 21px;
+}
+
 .advantages-list-item:nth-child(odd):not(.advantages-list-item-special) {
   background-color: rgba(131, 179, 211, 0.2);
 }
@@ -123,14 +156,49 @@ body {
   background-color: #82b3d3;
 }
 
-.advantages-list-item-title {
-  font-size: 24px;
-  line-height: 28px;
-  font-weight: 700;
-  text-transform: uppercase;
+.advantages-list-item-special-title {
+  color: #ffffff;
 }
 
-.advantages-list-item-description {
-  font-size: 18px;
-  line-height: 21px;
+/* hotel search */
+
+.hotel-search-title {
+  color: #000000;
+}
+
+/* page-footer  */
+
+/* subscribe */
+
+.subscribe {
+  color: #ffffff;
+  background-color: #3f5e72;
+  background-image: url("../images/subscribe-bg.jpg");
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+
+.subscribe-button {
+  background-color: #82b3d3;
+}
+
+/* footer-contacts */
+
+.social-link--vk {
+  background: url("../images/icons/social-vk-icon.svg") no-repeat;
+}
+
+.social-link--tg {
+  background: url("../images/icons/social-tg-icon.svg") no-repeat;
+}
+
+.social-link--youtube {
+  background: url("../images/icons/social-youtube-icon.svg") no-repeat;
+}
+
+.footer-contacts-phone {
+  color: #000000;
+  text-decoration: none;
+  font-size: 40px;
+  line-height: 40px;
 }
