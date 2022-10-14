@@ -110,29 +110,31 @@
           </form>
         </section>
         <section class="hotels-results">
-          <h2 class="hotels-results-title section-title">Найдено гостиниц: <span class="results-number">38</span></h2>
-          <select name="hotels-results-sort" aria-label="Сортировка">
-            <option value="cheap" selected>Сначала дешевые</option>
-            <option value="expensive">Сначала дорогие</option>
-            <option value="top-rated">Сначала с высоким рейтингом</option>
-          </select>
-          <ul class="hotels-results-viewtype-list list-reset">
-            <li class="hotels-results-view-item">
-              <a href="#" class="visually-hidden">
-                <span class="visually-hidden">Отобразить плиткой</span>
-              </a>
-            </li>
-            <li class="hotels-results-view-item">
-              <a href="#" class="visually-hidden">
-                <span class="visually-hidden">Отобразить колонкой</span>
-              </a>
-            </li>
-            <li class="hotels-results-view-item">
-              <a href="#" class="visually-hidden">
-                <span class="visually-hidden">Отобразить списком</span>
-              </a>
-            </li>
-          </ul>
+          <div class="hotels-sorting-wrapper">
+            <h2 class="hotels-results-title section-title">Найдено гостиниц: <span class="results-number">38</span></h2>
+            <select class="hotels-sorting-type" aria-label="Сортировка">
+              <option value="cheap" selected>Сначала дешевые</option>
+              <option value="expensive">Сначала дорогие</option>
+              <option value="top-rated">Сначала с высоким рейтингом</option>
+            </select>
+            <ul class="hotels-results-viewtype-list list-reset">
+              <li class="hotels-results-view-item">
+                <a href="#" class="visually-hidden">
+                  <span class="visually-hidden">Отобразить плиткой</span>
+                </a>
+              </li>
+              <li class="hotels-results-view-item">
+                <a href="#" class="visually-hidden">
+                  <span class="visually-hidden">Отобразить колонкой</span>
+                </a>
+              </li>
+              <li class="hotels-results-view-item">
+                <a href="#" class="visually-hidden">
+                  <span class="visually-hidden">Отобразить списком</span>
+                </a>
+              </li>
+            </ul>
+          </div>
           <ul class="hotels-results-list list-reset">
             <li class="hotels-results-item">
               <article class="hotels-card">
@@ -242,7 +244,7 @@
         </section>
       </main>
       <footer class="page-footer">
-        <section class="subscribe--catalog">
+        <section class="subscribe subscribe--catalog">
           <h2 class="subscribe-title section-title">Подпишитесь на рассылку</h2>
           <p>Только полезная информация и никакого спама, честное бойскаутское!</p>
           <form class="subscribe-form" action="https://echo.htmlacademy.ru/" method="post">

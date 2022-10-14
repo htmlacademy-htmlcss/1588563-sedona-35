@@ -165,9 +165,8 @@ body {
   flex-direction: column;
   align-items: center;
   color: #ffffff;
-  background-color: #3f5e72;
-  background: url("../images/hero-bg.jpg") no-repeat;
-  background-size: cover;
+  background: #3f5e72 url("../images/hero-bg.jpg") no-repeat;
+  background-size: 100% auto;
 }
 
 /* advantages  */
@@ -242,16 +241,14 @@ body {
 
 .subscribe {
   text-align: center;
+}
+
+.subscribe--index {
   color: #ffffff;
   background-color: #3f5e72;
   background-image: url("../images/subscribe-bg.jpg");
   background-size: 100% auto;
   background-repeat: no-repeat;
-}
-
-.subscribe--catalog {
-  color: #000000;
-  background-color: #ffffff;
 }
 
 /* footer-contacts */
@@ -287,6 +284,7 @@ body {
 /* hotel-filters */
 
 .hotel-filters {
+  padding: 35px 70px 70px;
   color: #ffffff;
   background: #3f5e72 url("../images/filters-bg.jpg") no-repeat;
   background-size: 100% auto;
@@ -308,6 +306,11 @@ body {
 }
 
 /* .hotels-form */
+
+.hotels-form {
+  display: flex;
+  align-items: flex-end;
+}
 
 .hotels-form-title {
   font-size: 20px;
@@ -335,6 +338,17 @@ body {
 
 /* hotels-results */
 
+.hotels-sorting-wrapper {
+  display: flex;
+  align-items: center;
+  padding: 0 70px;
+}
+
+.hotels-sorting-type {
+  margin-left: auto;
+  margin-right: 70px;
+}
+
 .hotels-results-title {
   color: #000000;
 }
@@ -346,6 +360,13 @@ body {
 
 .hotels-results-list a {
   text-decoration: none;
+}
+
+.hotels-results-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 0 70px;
 }
 
 .hotels-card {
@@ -372,7 +393,19 @@ body {
 
 /* pagination */
 
+.pagination-list {
+  padding: 0 70px;
+  display: flex;
+  gap: 8px;
+}
+
 .pagination-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 4px;
   color: #ffffff;
   text-decoration: none;
 }
@@ -383,6 +416,13 @@ body {
 }
 
 .pagination-link-more {
+  color: #000000;
+  background-color: #ffffff;
+}
+
+/* footer catalog page */
+
+.subscribe--catalog {
   color: #000000;
   background-color: #ffffff;
 }
