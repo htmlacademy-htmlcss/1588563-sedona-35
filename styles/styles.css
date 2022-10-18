@@ -127,9 +127,11 @@ body {
 }
 
 .navigation-list {
-  padding: 0 16px;
   display: flex;
   align-items: center;
+  margin: 0;
+  padding: 0 16px;
+  list-style: none;
 
   font-size: 20px;
   line-height: 24px;
@@ -153,11 +155,14 @@ body {
 }
 
 .user-navigation-list {
-  margin-left: auto;
   display: flex;
   flex-wrap: wrap;
   align-content: center;
   align-items: center;
+  margin: 0;
+  margin-left: auto;
+  padding: 0;
+  list-style: none;
 }
 
 .user-navigation-link {
@@ -207,13 +212,15 @@ body {
 /* hero  */
 
 .hero {
-  padding: 51px 0 82px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 51px 0 82px;
+  margin-bottom: 70px;
+
   color: #ffffff;
   background: #3f5e72 url("../images/hero-bg.jpg") no-repeat;
-  background-size: 100% auto;
+  background-size: cover;
 }
 
 /* advantages  */
@@ -223,10 +230,14 @@ body {
 }
 
 .advantages-title {
+  margin: 0;
+  margin-bottom: 25px;
   color: #000000;
 }
 
 .advantages-text {
+  margin: 0;
+  margin-bottom: 90px;
   color: #333333;
 }
 
@@ -234,42 +245,86 @@ body {
   padding: 0;
   margin: 0;
   list-style: none;
-
-  display: flex;
-  flex-wrap: wrap;
 }
 
-.advantages-list-item {
-  width: calc(100% / 3);
-  color: #333333;
-  background-color: rgba(131, 179, 211, 0.12);
-}
+.advantages-item-title {
+  margin: 0;
 
-.advantages-list-item-title {
   font-size: 24px;
   line-height: 28px;
   font-weight: 700;
   text-transform: uppercase;
-  color: #000000;
 }
 
-.advantages-list-item-description {
+.advantages-item-description {
+  margin: 0;
+
   font-size: 18px;
   line-height: 21px;
 }
 
-.advantages-list-item:nth-child(odd):not(.advantages-list-item-special) {
+.advantages-item--special:last-of-type .advantages-item-image {
+  order: -1;
+}
+
+.advantages-list--main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.advantages-list--main .advantages-item {
+  min-height: 384px;
+}
+
+.advantages-list--main .advantages-item--normal {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  padding: 103px 85px 20px;
+
+  color: #333333;
+  background-color: rgba(131, 179, 211, 0.12);
+}
+
+.advantages-item--normal:nth-of-type(3) {
   background-color: rgba(131, 179, 211, 0.2);
 }
 
-.advantages-list-item-special {
-  width: 100%;
+.advantages-item--normal .advantages-item-title {
+  margin-bottom: 62px;
+
+  color: #000000;
+}
+
+.advantages-list--main .advantages-item--special {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.advantages-item--special .advantages-item-title {
+  margin-bottom: 62px;
+}
+
+.advantages-card-wrapper {
+  width: 400px;
+  padding: 92px 85px 20px;
+
   color: #ffffff;
   background-color: #82b3d3;
 }
 
-.advantages-list-item-special-title {
-  color: #ffffff;
+.advantages-item-image {
+  width: 800px;
+}
+
+.advantages-list--additional {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.advantages-list--additional .advantages-item {
+  width: 400px;
+  min-height: 384px;
 }
 
 /* hotel search */
@@ -341,6 +396,12 @@ body {
   font-size: 60px;
   line-height: 78px;
   font-weight: 700;
+}
+
+.breadcrumbs-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .breadcrumbs-list a {
