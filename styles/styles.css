@@ -128,6 +128,7 @@ body {
 
 .navigation-list {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   margin: 0;
   padding: 0 16px;
@@ -263,7 +264,7 @@ body {
   line-height: 21px;
 }
 
-.advantages-item--special:last-of-type .advantages-item-image {
+.advantages-item--special:last-of-type .advantages-image-wrapper {
   order: -1;
 }
 
@@ -313,8 +314,16 @@ body {
   background-color: #82b3d3;
 }
 
+.advantages-image-wrapper {
+  height: 100%;
+  max-width: 800px;
+  overflow: hidden;
+}
+
 .advantages-item-image {
-  width: 800px;
+  display: block;
+  height: 100%;
+  width: auto;
 }
 
 .advantages-list--additional {
