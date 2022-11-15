@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: > 2%,last 1 version
+*/
+
 @font-face {
   font-family: "PT Sans";
   font-style: normal;
@@ -14,7 +21,6 @@
   font-display: swap;
 }
 
-
 html {
   height: 100%;
   box-sizing: border-box;
@@ -29,7 +35,6 @@ html {
 body {
   margin: 0;
   height: 100%;
-
   font-family: "PT Sans", sans-serif;
   font-size: 22px;
   line-height: 26px;
@@ -54,7 +59,6 @@ body {
   flex-direction: column;
   width: 1200px;
   min-height: 100%;
-
   background-color: #ffffff;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
@@ -75,6 +79,8 @@ body {
 .button {
   display: inline-block;
   padding: 8px 20px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   font-family: inherit;
   font-size: 20px;
@@ -87,7 +93,7 @@ body {
   border-radius: 4px;
   background: none;
   cursor: pointer;
-  transition: .3s ease;
+  transition: 0.3s ease;
 }
 
 .button:disabled {
@@ -168,6 +174,14 @@ body {
   flex-shrink: 0;
 }
 
+.logo-link:focus {
+  outline: none;
+}
+
+.logo-link:focus .logo-img {
+  outline: 3px solid #83b3d3;
+}
+
 .logo-img {
   position: absolute;
   display: block;
@@ -201,7 +215,7 @@ body {
   font-weight: 700;
   color: #000000;
   text-decoration: none;
-  transition: .3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
 .navigation-link:hover,
@@ -257,7 +271,7 @@ body {
 
 .user-navigation-link svg {
   fill: #000000;
-  transition: .3s ease;
+  transition: 0.3s ease;
 }
 
 .user-navigation-link:hover svg,
@@ -282,11 +296,18 @@ body {
   justify-content: center;
   align-items: center;
   min-width: 20px;
-  height: 20px;
+  min-height: 20px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   background-color: #7db54f;
   color: #ffffff;
   font-size: 10px;
   line-height: 10px;
+  text-align: center;
   border-radius: 50%;
 }
 
@@ -342,7 +363,9 @@ body {
 }
 
 .advantages-list {
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: (400px)[3];
   grid-template-columns: repeat(3, 400px);
   padding: 0;
   margin: 0;
@@ -365,7 +388,7 @@ body {
 .advantages-item-description {
   margin: 0;
   margin-bottom: 18px;
-  max-width: 230px;
+  max-width: 232px;
   font-size: 18px;
   line-height: 21px;
   order: 3;
@@ -382,7 +405,8 @@ body {
   position: absolute;
   bottom: -31px;
   left: 50%;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   width: 60px;
   height: 2px;
   background-color: rgba(0, 0, 0, 0.3);
@@ -454,13 +478,18 @@ body {
   background-color: rgba(131, 179, 211, 0.12);
 }
 
+.advantages-list--additional .advantages-card-wrapper {
+  padding: 0 10px;
+  padding-top: 183px;
+  justify-content: flex-start;
+}
+
 .advantages-list--additional .advantages-item:nth-of-type(even) {
   background-color: #ffffff;
 }
 
 .advantages-list--additional .advantages-item-title {
   margin-bottom: 30px;
-  padding-top: 102px;
 }
 
 .advantages-list--additional .advantages-item-description {
@@ -534,7 +563,9 @@ body {
 .subscribe-form {
   margin: 0 auto;
   width: 684px;
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 1fr auto;
   grid-template-columns: 1fr auto;
 }
 
@@ -549,12 +580,36 @@ body {
   color: #000000;
 }
 
+.subscribe-input::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.subscribe-input::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.subscribe-input:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.subscribe-input::-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.6);
+}
+
 .subscribe-input::placeholder {
-  color: rgba(0, 0, 0, .6);
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .subscribe-input:hover {
   background-color: #e6e6e6;
+}
+
+.subscribe-input:not(.subscribe-input:-moz-placeholder-shown) {
+  background-color: #f2f2f2;
+}
+
+.subscribe-input:not(.subscribe-input:-ms-input-placeholder) {
+  background-color: #f2f2f2;
 }
 
 .subscribe-input:not(.subscribe-input:placeholder-shown) {
@@ -596,8 +651,8 @@ body {
   margin: 0;
   padding: 0;
   list-style-type: none;
-
-  max-width: 144px;
+  width: 144px;
+  flex-shrink: 0;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -618,7 +673,7 @@ body {
   justify-content: center;
   min-width: 44px;
   min-height: 40px;
-  color: #000;
+  color: #000000;
 }
 
 .social-link svg {
@@ -681,7 +736,7 @@ body {
 .hotel-filters {
   padding: 35px 70px 62px;
   color: #ffffff;
-  background: #3f5e72 url("../images/filters-bg.jpg") no-repeat;
+  background: #3f5e72 url("../images/filters-bg.jpg") no-repeat center;
   background-size: cover;
 }
 
@@ -761,6 +816,9 @@ body {
 }
 
 .catalog-filter-title {
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
   margin-bottom: 32px;
   padding: 0;
   font-size: 20px;
@@ -772,13 +830,13 @@ body {
 
 .control {
   position: relative;
-  display: block;
+  display: flex;
+  align-items: center;
   padding-left: 36px;
 }
 
 .control-mark {
   position: absolute;
-  top: 1px;
   left: 0;
   width: 20px;
   height: 20px;
@@ -788,7 +846,7 @@ body {
 
 .control:hover .control-mark,
 .control:hover .control-label {
-  opacity: .6;
+  opacity: 0.6;
 }
 
 .control-input[type="checkbox"]:checked + .control-mark::before,
@@ -803,7 +861,8 @@ body {
   left: 5px;
   width: 2px;
   height: 7px;
-  transform: rotate(-44deg);
+  -webkit-transform: rotate(-44deg);
+          transform: rotate(-44deg);
 }
 
 .control-input[type="checkbox"]:checked + .control-mark::after {
@@ -811,11 +870,13 @@ body {
   left: 11px;
   width: 2px;
   height: 12px;
-  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
 .control-label {
   display: block;
+  max-width: 160px;
   font-size: 18px;
   line-height: 23px;
 }
@@ -835,6 +896,14 @@ body {
   background-color: #3f5e72;
   border-radius: 50%;
   content: "";
+}
+
+.control-input:focus + .control-mark {
+  outline: 3px solid #83b3d3;
+}
+
+.control-input:active + .control-mark {
+  opacity: 0.5;
 }
 
 .hotels-form-buttons-wrapper {
@@ -859,7 +928,7 @@ body {
 }
 
 .hotels-form-button--reset:hover {
-  opacity: .6;
+  opacity: 0.6;
 }
 
 .hotels-form-button--reset:active {
@@ -867,7 +936,7 @@ body {
 }
 
 .hotels-form-button--reset:disabled {
-  opacity: .1;
+  opacity: 0.1;
   pointer-events: none;
 }
 
@@ -898,7 +967,7 @@ body {
 
 .range-input {
   width: 143px;
-  padding: 13px 21px 11px 19px;
+  padding: 11px 22px 9px 18px;
   padding-right: 42px;
   font: inherit;
   font-size: 18px;
@@ -906,7 +975,9 @@ body {
   font-weight: 700;
   background-color: #f2f2f2;
   border: 2px solid transparent;
-  appearance: textfield;
+  -webkit-appearance: textfield;
+     -moz-appearance: textfield;
+          appearance: textfield;
 }
 
 .range-input:hover {
@@ -915,7 +986,7 @@ body {
 
 .range-input:focus {
   background-color: #e6e6e6;
-  outline: 3px solid #83B3D3;
+  outline: 3px solid #83b3d3;
 }
 
 .range-input:active {
@@ -934,7 +1005,8 @@ body {
 
 .range-input::-webkit-outer-spin-button,
 .range-input::-webkit-inner-spin-button {
-  appearance: none;
+  -webkit-appearance: none;
+          appearance: none;
   margin: 0;
 }
 
@@ -942,7 +1014,8 @@ body {
   position: absolute;
   right: 20px;
   top: 50%;
-  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   font-size: 18px;
   line-height: 24px;
   color: rgba(0, 0, 0, 0.3);
@@ -1000,12 +1073,12 @@ body {
   position: relative;
   display: flex;
   align-items: center;
-  min-width: 292px;
 }
 
 .select-control {
+  min-width: 292px;
   width: 100%;
-  padding: 14px 20px;
+  padding: 12px 20px 11px 18px;
   padding-right: 52px;
   font: inherit;
   font-size: 18px;
@@ -1016,8 +1089,10 @@ body {
   border-radius: 4px;
   background-image: url("../images/icons/select-arrow.svg");
   background-repeat: no-repeat;
-  background-position: right 20px center;
-  appearance: none;
+  background-position: right 18px center;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }
 
 .select-control:hover,
@@ -1033,16 +1108,16 @@ body {
 .select-control:disabled {
   color: #000000;
   border: 2px solid #000000;
-  opacity: .3;
+  opacity: 0.3;
 }
 
 /* sorting */
 
 .sorting-type {
+  width: 292px;
   margin-left: auto;
   margin-right: 70px;
 }
-
 
 .sorting-container {
   display: flex;
@@ -1056,7 +1131,8 @@ body {
 }
 
 .sorting-viewtype {
-  max-width: 160px;
+  width: 160px;
+  flex-shrink: 0;
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
@@ -1076,7 +1152,7 @@ body {
 .sorting-viewtype-icon {
   border: 2px solid #e5e5e5;
   border-radius: 4px;
-  transition: .2s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
 
 .sorting-viewtype-icon--active,
@@ -1111,13 +1187,25 @@ body {
 }
 
 .hotels-list {
+  position: relative;
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 340px 20px 340px 20px 340px;
   grid-template-columns: repeat(3, 340px);
   gap: 20px;
   margin: 0;
   margin-bottom: 40px;
   padding: 0 0 40px;
   list-style-type: none;
+}
+
+.hotels-list::before {
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  background-color: #e6e6e6;
+  content: "";
+  bottom: -1px;
 }
 
 .hotels-list a {
@@ -1128,12 +1216,12 @@ body {
   display: flex;
   min-height: 100%;
   flex-direction: column;
-  padding: 19px;
+  padding: 20px;
   font-size: 18px;
   line-height: 21px;
-  border: 1px solid #e6e6e6;
+  box-shadow: 0 0 0 1px #e6e6e6;
   border-radius: 4px;
-  transition: .3s ease;
+  transition: 0.3s ease;
 }
 
 .hotels-card:hover {
@@ -1150,6 +1238,8 @@ body {
 
 .hotels-card-image {
   display: block;
+  width: 100%;
+  height: auto;
 }
 
 .hotels-card-link {
@@ -1158,15 +1248,16 @@ body {
 
 .hotels-card-link--title {
   flex-grow: 1;
-  margin-bottom: 16px;
+  margin-bottom: 15px;
 }
 
 .hotels-card-link--image {
   order: -1;
-  margin-bottom: 16px;
+  margin-bottom: 17px;
 }
 
 .hotels-card-content {
+  display: -ms-grid;
   display: grid;
   row-gap: 16px;
 }
@@ -1220,7 +1311,8 @@ body {
 .hotels-card-rating {
   margin: 0;
   width: 140px;
-  padding: 8px 22px;
+  padding: 9px 22px 8px 20px;
+  text-align: right;
   font-size: 16px;
   line-height: 20px;
   border-radius: 4px;
@@ -1250,6 +1342,9 @@ body {
   align-items: center;
   padding: 5px;
   min-width: 60px;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
   min-height: 60px;
   border-radius: 4px;
   color: #ffffff;
@@ -1286,6 +1381,7 @@ body {
   width: 100%;
   height: 100%;
   background-color: rgba(242, 242, 242, 0.8);
+  overflow: scroll;
 }
 
 .modal-close {
@@ -1339,6 +1435,10 @@ body {
   fill-opacity: 0.5;
 }
 
+.modal-close-button:active {
+  outline: none;
+}
+
 .modal-close-button:disabled {
   opacity: 0.7;
 }
@@ -1360,11 +1460,19 @@ body {
 .modal-search-field-group {
   display: flex;
   align-items: center;
-  margin-bottom: 48px;
+}
+
+.modal-search-field-group--date {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 440px;
+  grid-template-columns: auto 440px;
+  margin-bottom: 19px;
 }
 
 .modal-search-field-group--number {
   justify-content: space-between;
+  margin-bottom: 48px;
 }
 
 .modal-search label {
@@ -1379,8 +1487,24 @@ body {
   font-weight: 700;
 }
 
+.modal-search input::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-search input::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-search input:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-search input::-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.6);
+}
+
 .modal-search input::placeholder {
-  color: rgba(0, 0, 0, .6);
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .modal-search input:hover {
@@ -1399,11 +1523,11 @@ body {
 }
 
 .modal-search input:disabled {
-  opacity: .3;
+  opacity: 0.3;
 }
 
 .modal-search-field-date {
-  max-width: 440px;
+  width: 100%;
   margin-left: auto;
   padding: 12px 20px;
   padding-right: 33px;
@@ -1414,6 +1538,22 @@ body {
   background-repeat: no-repeat;
   background-position: right 20px center;
   border-radius: 4px;
+}
+
+.modal-search-field-date-text {
+  padding: 4px 20px;
+  font-size: 16px;
+  line-height: 21px;
+  color: #333333;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-area: 2 / 2 / 3 / 3;
+}
+
+.modal-search-field-date-text--error {
+  color: #ff5757;
 }
 
 .modal-search-number-wrapper {
@@ -1428,23 +1568,29 @@ body {
   line-height: 20px;
   width: 31px;
   display: flex;
-  appearance: textfield;
+  -webkit-appearance: textfield;
+     -moz-appearance: textfield;
+          appearance: textfield;
   padding: 14px 10px;
 }
 
 .modal-search-number::-webkit-outer-spin-button,
 .modal-search-number::-webkit-inner-spin-button {
-  appearance: none;
+  -webkit-appearance: none;
+          appearance: none;
   margin: 0;
 }
 
 .modal-search-control-wrapper {
-  min-width: 110px;
-  display: flex;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 40px -webkit-min-content 40px;
+  -ms-grid-columns: 40px min-content 40px;
+  grid-template-columns: 40px -webkit-min-content 40px;
+  grid-template-columns: 40px min-content 40px;
   align-items: center;
-  justify-content: space-between;
+  justify-items: center;
   margin-left: 47px;
-  padding: 0 10px;
   background-color: #f2f2f2;
   border-radius: 4px;
 }
@@ -1456,6 +1602,7 @@ body {
   padding: 0;
   width: 20px;
   height: 20px;
+  background-color: transparent;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -1463,8 +1610,8 @@ body {
 
 .modal-search-control-button svg {
   display: block;
-  fill: rgba(117, 97, 87, .3);
-  transition: ease-in-out .3s;
+  fill: rgba(117, 97, 87, 0.3);
+  transition: ease-in-out 0.3s;
 }
 
 .modal-search-control-button:hover svg,
@@ -1477,12 +1624,12 @@ body {
 }
 
 .modal-search-control-button:active svg {
-  fill: rgba(0, 0, 0, .3);
+  fill: rgba(0, 0, 0, 0.3);
   transition: 0;
 }
 
 .modal-search-control-button:disabled svg {
-  fill: rgba(0, 0, 0, .06);
+  fill: rgba(0, 0, 0, 0.06);
 }
 
 .modal-search-control-button:disabled {
@@ -1493,14 +1640,14 @@ body {
   display: block;
   width: 14px;
   height: 2px;
-  fill: rgba(117, 97, 87, .3);
+  fill: rgba(117, 97, 87, 0.3);
 }
 
 .modal-search-control-button--plus svg {
   display: block;
   width: 14px;
   height: 14px;
-  fill: rgba(117, 97, 87, .3);
+  fill: rgba(117, 97, 87, 0.3);
 }
 
 .modal-button-submit {
@@ -1558,7 +1705,8 @@ body {
   position: absolute;
   top: 41px;
   left: 50%;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   z-index: 1;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
   display: none;
