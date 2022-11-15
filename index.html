@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Седона. Главная страница</title>
+    <link rel="icon" href="./favicon.ico">
+    <link rel="icon" type="image/png" href="./images/favicon.png">
     <link rel="stylesheet" href="./styles/styles.css">
   </head>
 
@@ -147,7 +149,7 @@
           <p class="hotel-search-title section-title">Заинтересовались?</p>
           <p class="hotel-search-description">Укажите предполагаемые даты поездки,<br> и мы покажем вам лучшие
             предложения гостиниц в Седоне</p>
-          <a class="button button-main hotel-search-button" href="catalog.html">Поиск гостиницы в Седоне</a>
+          <a class="button button-main hotel-search-button" href="#">Поиск гостиницы в Седоне</a>
         </section>
       </main>
       <footer class="page-footer">
@@ -219,15 +221,18 @@
         <section class="modal-content">
           <h2 class="modal-title">Поиск гостиницы в Седоне</h2>
           <form class="modal-search-form" action="https://echo.htmlacademy.ru/" method="post">
-            <div class="modal-search-field-group">
+            <div class="modal-search-field-group modal-search-field-group--date">
               <label for="move-in-date">Дата Заезда:</label>
               <input class="input modal-search-field-date" id="move-in-date" type="text" name="move-in-date"
-                value="27 апреля 2020" placeholder="Укажите дату">
+                value="27 апреля 2020" placeholder="Укажите дату" required>
+              <span class="modal-search-field-date-text modal-search-field-date-text--error">Мы не можем отправить вас в
+                прошлое.</span>
             </div>
-            <div class="modal-search-field-group">
+            <div class="modal-search-field-group modal-search-field-group--date">
               <label for="move-out-date">Дата Выезда:</label>
               <input class="input modal-search-field-date" id="move-out-date" type="text" name="date-move-out"
-                value="1 сентября 2023" placeholder="Укажите дату">
+                value="1 сентября 2023" placeholder="Укажите дату" required>
+              <span class="modal-search-field-date-text">На эти даты есть свободные номера. Пока есть.</span>
             </div>
             <div class="modal-search-field-group modal-search-field-group--number">
               <div class="modal-search-number-wrapper">
@@ -241,7 +246,7 @@
                     </svg>
                   </button>
                   <input class="input modal-search-number modal-search-number--of-adults" id="number-of-adults"
-                    type="number" name="adults" value="2">
+                    type="number" name="number-of-adults" value="2" required>
                   <button class="modal-search-control-button modal-search-control-button--plus" type="button">
                     <span class="visually-hidden">Увеличить</span>
                     <svg aria-hidden="true" focusable="false" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
@@ -272,7 +277,7 @@
                     </svg>
                   </button>
                   <input class="input modal-search-number modal-search-number--of-children" id="number-of-children"
-                    type="number" name="kids" value="2">
+                    type="number" name="number-of-children" value="2" required>
                   <button class="modal-search-control-button modal-search-control-button--plus" type="button">
                     <span class="visually-hidden">Увеличить</span>
                     <svg aria-hidden="true" focusable="false" width="14" height="14" viewBox="0 0 14 14"
@@ -290,8 +295,14 @@
     </div>
     <script>
       const searchPopup = document.querySelector(".modal-container");
-      const searchLink = document.querySelector(".user-navigation-deal-button");
+      const searchLinkHeader = document.querySelector(".user-navigation-deal-button");
+      const searchLink = document.querySelector(".hotel-search-button");
       const searchClose = document.querySelector(".modal-close-button");
+
+      searchLinkHeader.addEventListener("click", function (evt) {
+        evt.preventDefault();
+        searchPopup.classList.remove("modal-close");
+      });
 
       searchLink.addEventListener("click", function (evt) {
         evt.preventDefault();
