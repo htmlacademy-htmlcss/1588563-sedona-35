@@ -421,8 +421,6 @@ body {
   height: 100%;
   width: 800px;
   overflow: hidden;
-  color: #ffffff;
-  background-color: #756157;
 }
 
 .advantages-item-image {
@@ -430,6 +428,8 @@ body {
   height: 100%;
   width: 100%;
   object-fit: cover;
+  color: #ffffff;
+  background-color: #756157;
 }
 
 .advantages-item--normal .advantages-card-wrapper {
