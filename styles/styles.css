@@ -172,6 +172,7 @@ body {
   width: 140px;
   margin-right: 28px;
   flex-shrink: 0;
+  z-index: 2;
 }
 
 .logo-link:focus {
@@ -179,7 +180,7 @@ body {
 }
 
 .logo-link:focus .logo-img {
-  outline: 3px solid #83b3d3;
+  outline: auto;
 }
 
 .logo-img {
@@ -394,19 +395,13 @@ body {
   order: 3;
 }
 
-.advantages-item-image {
-  display: block;
-  height: 100%;
-  width: auto;
-}
-
 .advantages-list--main .advantages-item-title::after {
   content: "";
   position: absolute;
   bottom: -31px;
   left: 50%;
   -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
   width: 60px;
   height: 2px;
   background-color: rgba(0, 0, 0, 0.3);
@@ -424,8 +419,17 @@ body {
 
 .advantages-image-wrapper {
   height: 100%;
-  max-width: 800px;
+  width: 800px;
   overflow: hidden;
+  color: #ffffff;
+  background-color: #756157;
+}
+
+.advantages-item-image {
+  display: block;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 .advantages-item--normal .advantages-card-wrapper {
@@ -862,7 +866,7 @@ body {
   width: 2px;
   height: 7px;
   -webkit-transform: rotate(-44deg);
-          transform: rotate(-44deg);
+  transform: rotate(-44deg);
 }
 
 .control-input[type="checkbox"]:checked + .control-mark::after {
@@ -871,7 +875,7 @@ body {
   width: 2px;
   height: 12px;
   -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 .control-label {
@@ -976,8 +980,8 @@ body {
   background-color: #f2f2f2;
   border: 2px solid transparent;
   -webkit-appearance: textfield;
-     -moz-appearance: textfield;
-          appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
 }
 
 .range-input:hover {
@@ -1006,7 +1010,7 @@ body {
 .range-input::-webkit-outer-spin-button,
 .range-input::-webkit-inner-spin-button {
   -webkit-appearance: none;
-          appearance: none;
+  appearance: none;
   margin: 0;
 }
 
@@ -1015,7 +1019,7 @@ body {
   right: 20px;
   top: 50%;
   -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
   font-size: 18px;
   line-height: 24px;
   color: rgba(0, 0, 0, 0.3);
@@ -1091,8 +1095,8 @@ body {
   background-repeat: no-repeat;
   background-position: right 18px center;
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 .select-control:hover,
@@ -1569,15 +1573,15 @@ body {
   width: 31px;
   display: flex;
   -webkit-appearance: textfield;
-     -moz-appearance: textfield;
-          appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
   padding: 14px 10px;
 }
 
 .modal-search-number::-webkit-outer-spin-button,
 .modal-search-number::-webkit-inner-spin-button {
   -webkit-appearance: none;
-          appearance: none;
+  appearance: none;
   margin: 0;
 }
 
@@ -1706,7 +1710,7 @@ body {
   top: 41px;
   left: 50%;
   -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
   z-index: 1;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
   display: none;
