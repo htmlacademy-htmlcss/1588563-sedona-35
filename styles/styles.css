@@ -798,6 +798,11 @@ body {
   opacity: 0.3;
 }
 
+.breadcrumbs-link--current {
+  cursor: default;
+  pointer-events: none;
+}
+
 .breadcrumbs-link--index {
   background: url("../images/icons/breadcrumbs-home-icon.svg") no-repeat center center;
 }
